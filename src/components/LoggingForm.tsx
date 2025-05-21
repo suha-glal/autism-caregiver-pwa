@@ -27,6 +27,7 @@ export function LoggingForm({ userId }: LoggingFormProps) {
     if (!label) {
       return;
     }
+    console.log("Current user ID:", userId); // Debug the user ID
 
     const newEntry: LogEntry = {
       user_id: userId,
@@ -34,6 +35,7 @@ export function LoggingForm({ userId }: LoggingFormProps) {
       note,
       timestamp: new Date().toISOString(),
     };
+    console.log("Saving entry with data:", newEntry); // Debug the entry data
 
     // Save entry using the offline sync hook
     await saveEntry(newEntry);
