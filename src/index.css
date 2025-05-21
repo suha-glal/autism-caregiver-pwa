@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* High contrast theme colors */
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 240 5.9% 10%;
+  --radius: 0.5rem;
+}
+
+/* High contrast dark mode */
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 240 4.9% 83.9%;
+}
+
+/* Emotional state colors with high contrast */
+.happy {
+  background-color: #4CAF50;
+  color: #000000;
+}
+
+.sad {
+  background-color: #2196F3;
+  color: #FFFFFF;
+}
+
+.angry {
+  background-color: #F44336;
+  color: #FFFFFF;
+}
+
+.tantrum {
+  background-color: #9C27B0;
+  color: #FFFFFF;
+}
+
+.sleeping {
+  background-color: #673AB7;
+  color: #FFFFFF;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+/* Accessibility improvements */
+:focus {
+  outline: 3px solid #000;
+  outline-offset: 2px;
+}
+
+.dark :focus {
+  outline: 3px solid #fff;
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+  
+  input, select, textarea, button {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Offline indicator */
+.offline-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #F44336;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+/* Form styling */
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-select, .form-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #000;
+  border-radius: var(--radius);
+  background-color: white;
+}
+
+.dark .form-select, .dark .form-textarea {
+  background-color: #333;
+  border-color: #fff;
+  color: white;
+}
+
+.form-button {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.dark .form-button {
+  background-color: #fff;
+  color: #000;
+}
+
+.form-button:hover {
+  opacity: 0.9;
+}
+
+.form-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Status indicators */
+.status-saved {
+  color: #4CAF50;
+}
+
+.status-pending {
+  color: #FF9800;
+}
+
+.status-error {
+  color: #F44336;
+}
