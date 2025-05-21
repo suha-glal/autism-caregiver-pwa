@@ -23,21 +23,26 @@ export function useOfflineSync() {
     // If online, try to sync immediately
     if (isOnline) {
       try {
-        const { error } = await supabase
+        console.log("Attempting to save entry to Supabase:", entry);
+      
+        const { data, error } = await supabase
           .from('logs')
           .insert([
             { 
+              user_id: entry.user_id,
               label: entry.label, 
               note: entry.note, 
               timestamp: entry.timestamp 
             }
           ]);
+        console.log("Supabase response:", { data, error });
         
         if (error) throw error;
         
         setSyncStatus('Entry saved and synced successfully!');
         return true;
       } catch (error: any) {
+        console.error("Detailed sync error:", error);
         setSyncStatus(`Entry saved locally. Sync failed: ${error.message}`);
         return false;
       }

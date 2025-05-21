@@ -14,6 +14,7 @@ export function useAuth() {
       try {
         setLoading(true);
         const { data } = await supabase.auth.getSession();
+        console.log("Auth session data:", data); // Debug the session
         setSession(data.session);
         setUser(data.session?.user ?? null);
       } catch (error) {
